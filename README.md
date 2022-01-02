@@ -1,1 +1,1 @@
-adopt-openj9-16.0.2
+JDK: adopt-openj9-16.0.2
