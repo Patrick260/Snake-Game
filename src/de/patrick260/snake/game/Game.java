@@ -151,17 +151,17 @@ public class Game extends JPanel implements ActionListener {
         if (running) {
 
             graphics.setColor(APPLE_COLOR);
-            graphics.drawRect(apple_x, apple_y, PART_SIZE, PART_SIZE);
+            graphics.fillRect(apple_x, apple_y, PART_SIZE, PART_SIZE);
 
             for (int i = 1; i < tail_amount; i++) {
 
                 graphics.setColor(TAIL_COLOR);
-                graphics.drawRect(snake_x[i], snake_y[i], PART_SIZE, PART_SIZE);
+                graphics.fillRect(snake_x[i], snake_y[i], PART_SIZE, PART_SIZE);
 
             }
 
             graphics.setColor(HEAD_COLOR);
-            graphics.drawRect(snake_x[0], snake_y[0], PART_SIZE, PART_SIZE);
+            graphics.fillRect(snake_x[0], snake_y[0], PART_SIZE, PART_SIZE);
 
             Toolkit.getDefaultToolkit().sync();
 
