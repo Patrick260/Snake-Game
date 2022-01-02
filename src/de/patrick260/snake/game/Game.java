@@ -19,6 +19,9 @@ public class Game extends JPanel {
     private int[] snake_x = new int[WIDTH * HEIGHT / (PART_SIZE * PART_SIZE)];
     private int[] snake_y = new int[WIDTH * HEIGHT / (PART_SIZE * PART_SIZE)];
 
+    private int apple_x;
+    private int apple_y;
+
 
     public Game() {
 
@@ -33,6 +36,16 @@ public class Game extends JPanel {
             snake_y[i] = 100 - i * 10;
 
         }
+
+    }
+
+
+    private void spawn_apple() {
+
+       int random = (int) (Math.random() * 29);
+
+       apple_x = random * PART_SIZE;
+       apple_y = random * PART_SIZE;
 
     }
 
