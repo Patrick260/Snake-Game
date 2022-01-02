@@ -2,8 +2,10 @@ package de.patrick260.snake.game;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Game extends JPanel {
+public class Game extends JPanel implements ActionListener {
 
     private final int WIDTH = 300;
     private final int HEIGHT = 300;
@@ -21,6 +23,8 @@ public class Game extends JPanel {
 
     private int apple_x;
     private int apple_y;
+
+    private boolean running;
 
 
     public Game() {
@@ -46,6 +50,17 @@ public class Game extends JPanel {
 
        apple_x = random * PART_SIZE;
        apple_y = random * PART_SIZE;
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent event) {
+
+        if (running) {
+
+
+
+        }
 
     }
 
