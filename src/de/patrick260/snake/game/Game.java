@@ -21,10 +21,14 @@ public class Game extends JPanel implements ActionListener {
     private int[] snake_x = new int[WIDTH * HEIGHT / (PART_SIZE * PART_SIZE)];
     private int[] snake_y = new int[WIDTH * HEIGHT / (PART_SIZE * PART_SIZE)];
 
-    private Direction direction;
+    protected static Direction direction;
 
     private int apple_x;
     private int apple_y;
+
+    private Timer timer;
+
+    private final int GAMESPEED = 200;
 
     private boolean running;
 
@@ -42,6 +46,13 @@ public class Game extends JPanel implements ActionListener {
             snake_y[i] = 100 - i * 10;
 
         }
+
+        running = true;
+
+        timer = new Timer(GAMESPEED, this);
+        timer.start();
+
+        spawn_apple();
 
     }
 
@@ -83,6 +94,12 @@ public class Game extends JPanel implements ActionListener {
         if (snake_x[0] >= WIDTH || snake_y[0] >= HEIGHT) {
 
             running = false;
+
+        }
+
+        if (!running) {
+
+            timer.stop();
 
         }
 
