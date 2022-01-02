@@ -53,12 +53,23 @@ public class Game extends JPanel implements ActionListener {
 
     }
 
+    private void checkApple() {
+
+        if (snake_x[0] == apple_x && snake_y[0] == apple_y) {
+
+            tail_amount++;
+            spawn_apple();
+
+        }
+
+    }
+
     @Override
     public void actionPerformed(ActionEvent event) {
 
         if (running) {
 
-
+            checkApple();
 
         }
 
