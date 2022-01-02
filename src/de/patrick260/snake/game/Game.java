@@ -21,6 +21,8 @@ public class Game extends JPanel implements ActionListener {
     private int[] snake_x = new int[WIDTH * HEIGHT / (PART_SIZE * PART_SIZE)];
     private int[] snake_y = new int[WIDTH * HEIGHT / (PART_SIZE * PART_SIZE)];
 
+    private Direction direction;
+
     private int apple_x;
     private int apple_y;
 
@@ -86,6 +88,29 @@ public class Game extends JPanel implements ActionListener {
 
     }
 
+    private void moveSnake() {
+
+        for (int i = tail_amount; i > 0; i--) {
+
+            snake_x[i] = snake_x[i - 1];
+            snake_y[i] = snake_y[i - 1];
+
+        }
+
+        switch (direction) {
+
+            case LEFT -> snake_x[0] -= PART_SIZE;
+
+            case RIGHT -> snake_x[0] += PART_SIZE;
+
+            case UP -> snake_y[0] -= PART_SIZE;
+
+            case DOWN -> snake_y[0] += PART_SIZE;
+
+        }
+
+    }
+
     @Override
     public void actionPerformed(ActionEvent event) {
 
@@ -93,6 +118,7 @@ public class Game extends JPanel implements ActionListener {
 
             checkApple();
             checkDeath();
+            moveSnake();
 
         }
 
