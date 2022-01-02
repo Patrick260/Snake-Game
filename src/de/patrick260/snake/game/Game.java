@@ -64,12 +64,35 @@ public class Game extends JPanel implements ActionListener {
 
     }
 
+    private void checkDeath() {
+
+        for (int i = tail_amount; i > 3; i--) {
+
+            if (snake_x[0] == snake_x[i] && snake_y[0] == snake_y[i]) {
+
+                running = false;
+
+                break;
+
+            }
+
+        }
+
+        if (snake_x[0] >= WIDTH || snake_y[0] >= HEIGHT) {
+
+            running = false;
+
+        }
+
+    }
+
     @Override
     public void actionPerformed(ActionEvent event) {
 
         if (running) {
 
             checkApple();
+            checkDeath();
 
         }
 
