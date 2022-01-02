@@ -174,7 +174,7 @@ public class Game extends JPanel implements ActionListener {
 
             graphics.setColor(Color.RED);
             graphics.setFont(font);
-            graphics.drawString(text, (WIDTH - fontMetrics.stringWidth(text)), HEIGHT / 2);
+            graphics.drawString(text, (WIDTH - fontMetrics.stringWidth(text)) / 2, HEIGHT / 2);
 
         }
 
