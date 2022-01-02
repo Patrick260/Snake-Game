@@ -21,7 +21,7 @@ public class Game extends JPanel implements ActionListener {
     private int[] snake_x = new int[WIDTH * HEIGHT / (PART_SIZE * PART_SIZE)];
     private int[] snake_y = new int[WIDTH * HEIGHT / (PART_SIZE * PART_SIZE)];
 
-    protected static Direction direction;
+    protected static Direction direction = Direction.RIGHT;
 
     private int apple_x;
     private int apple_y;
