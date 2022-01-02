@@ -1,2 +1,1 @@
-# Snake-Game
-A simple snake game written in java.
+adopt-openj9-16.0.2
