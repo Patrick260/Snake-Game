@@ -103,7 +103,7 @@ public class Game extends JPanel implements ActionListener {
 
         }
 
-        if (snake_x[0] >= WIDTH || snake_x[0] <= 0 || snake_y[0] >= HEIGHT || snake_y[0] <= 0) {
+        if (snake_x[0] > WIDTH || snake_x[0] < 0 || snake_y[0] > HEIGHT || snake_y[0] < 0) {
 
             running = false;
 
@@ -147,8 +147,8 @@ public class Game extends JPanel implements ActionListener {
         if (running) {
 
             checkApple();
-            checkDeath();
             moveSnake();
+            checkDeath();
 
         }
 
