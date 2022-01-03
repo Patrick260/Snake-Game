@@ -43,7 +43,7 @@ public class Game extends JPanel implements ActionListener {
         for (int i = 0; i < tail_amount; i++) {
 
             snake_x[i] = 100 - i * 10;
-            snake_y[i] = 100 - i * 10;
+            snake_y[i] = 100;
 
         }
 
