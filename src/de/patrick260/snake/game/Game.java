@@ -21,16 +21,16 @@ public class Game extends JPanel implements ActionListener {
     private int[] snake_x = new int[WIDTH * HEIGHT / (PART_SIZE * PART_SIZE)];
     private int[] snake_y = new int[WIDTH * HEIGHT / (PART_SIZE * PART_SIZE)];
 
-    protected static Direction direction = Direction.RIGHT;
+    protected Direction direction = Direction.RIGHT;
 
     private int apple_x;
     private int apple_y;
 
     private Timer timer;
 
-    private final int GAMESPEED = 200;
+    private final int GAME_SPEED = 200;
 
-    public static boolean alreadyMovedInTick = false;
+    protected boolean alreadyMovedInTick;
 
     private boolean running;
 
@@ -51,7 +51,7 @@ public class Game extends JPanel implements ActionListener {
 
         running = true;
 
-        timer = new Timer(GAMESPEED, this);
+        timer = new Timer(GAME_SPEED, this);
         timer.start();
 
         spawn_apple();
@@ -130,6 +130,7 @@ public class Game extends JPanel implements ActionListener {
 
     }
 
+
     @Override
     public void actionPerformed(ActionEvent event) {
 
@@ -143,9 +144,10 @@ public class Game extends JPanel implements ActionListener {
 
         repaint();
 
-        Game.alreadyMovedInTick = false;
+        alreadyMovedInTick = false;
 
     }
+
 
     @Override
     public void paintComponent(Graphics graphics) {

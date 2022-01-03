@@ -7,9 +7,12 @@ import java.awt.*;
 
 public class Snake extends JFrame {
 
+    public static Game game;
+
+
     public Snake() {
 
-        add(new Game());
+        add((game = new Game()));
 
         setResizable(false);
 
