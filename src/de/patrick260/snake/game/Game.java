@@ -30,6 +30,8 @@ public class Game extends JPanel implements ActionListener {
 
     private final int GAMESPEED = 200;
 
+    public static boolean alreadyMovedInTick = false;
+
     private boolean running;
 
 
@@ -140,6 +142,8 @@ public class Game extends JPanel implements ActionListener {
         }
 
         repaint();
+
+        Game.alreadyMovedInTick = false;
 
     }
 
