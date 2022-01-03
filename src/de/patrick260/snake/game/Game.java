@@ -169,7 +169,7 @@ public class Game extends JPanel implements ActionListener {
 
             String text = "Game Over";
 
-            Font font = new Font("Calibri", Font.BOLD, 16);
+            Font font = new Font("Calibri", Font.BOLD, 50);
             FontMetrics fontMetrics = getFontMetrics(font);
 
             graphics.setColor(Color.RED);
