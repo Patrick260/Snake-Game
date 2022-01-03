@@ -61,12 +61,10 @@ public class Game extends JPanel implements ActionListener {
 
     private void spawn_apple() {
 
-       int random = (int) (Math.random() * 29);
+        apple_x = (int) (Math.random() * ((WIDTH - 10) / 10)) * PART_SIZE;
+        apple_y = (int) (Math.random() * ((HEIGHT - 10) / 10)) * PART_SIZE;
 
-       apple_x = random * PART_SIZE;
-       apple_y = random * PART_SIZE;
-
-       for (int i = 0; i < tail_amount; i++) {
+        for (int i = 0; i < tail_amount; i++) {
 
             if (snake_x[i] == apple_x && snake_y[i] == apple_y) {
 
@@ -76,7 +74,7 @@ public class Game extends JPanel implements ActionListener {
 
             }
 
-       }
+        }
 
     }
 
