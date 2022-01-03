@@ -7,10 +7,10 @@ import java.awt.event.ActionListener;
 
 public class Game extends JPanel implements ActionListener {
 
-    private final int WIDTH = 300;
-    private final int HEIGHT = 300;
+    private final int WIDTH = 900;
+    private final int HEIGHT = 900;
 
-    private final int PART_SIZE = 10;
+    private final int PART_SIZE = 50;
 
     private final Color APPLE_COLOR = Color.red;
     private final Color HEAD_COLOR = Color.orange;
