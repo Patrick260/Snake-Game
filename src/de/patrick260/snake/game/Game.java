@@ -61,8 +61,8 @@ public class Game extends JPanel implements ActionListener {
 
     private void spawn_apple() {
 
-        apple_x = (int) (Math.random() * ((WIDTH - 10) / 10)) * PART_SIZE;
-        apple_y = (int) (Math.random() * ((HEIGHT - 10) / 10)) * PART_SIZE;
+        apple_x = (int) (Math.random() * ((WIDTH - PART_SIZE) / PART_SIZE)) * PART_SIZE;
+        apple_y = (int) (Math.random() * ((HEIGHT - PART_SIZE) / PART_SIZE)) * PART_SIZE;
 
         for (int i = 0; i < tail_amount; i++) {
 
