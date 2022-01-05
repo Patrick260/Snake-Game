@@ -32,7 +32,7 @@ public class Game extends JPanel implements ActionListener {
 
     private static final Color BACKGROUND_COLOR = GUI.BACKGROUND_COLOR;
 
-    private static final int PART_SIZE = 50;
+    private static final int PART_SIZE = 25;
 
     private static final Color APPLE_COLOR = Color.red;
     private static final Color HEAD_COLOR = Color.orange;
