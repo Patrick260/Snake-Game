@@ -17,6 +17,9 @@
 
 package de.patrick260.snake.game;
 
+import de.patrick260.snake.gui.GUI;
+import de.patrick260.snake.menu.MainMenu;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -24,45 +27,57 @@ import java.awt.event.ActionListener;
 
 public class Game extends JPanel implements ActionListener {
 
-    private final int WIDTH = 900;
-    private final int HEIGHT = 900;
+    private static final int WIDTH = GUI.WIDTH;
+    private static final int HEIGHT = GUI.HEIGHT;
 
-    private final int PART_SIZE = 50;
+    private static final Color BACKGROUND_COLOR = GUI.BACKGROUND_COLOR;
 
-    private final Color APPLE_COLOR = Color.red;
-    private final Color HEAD_COLOR = Color.orange;
-    private final Color TAIL_COLOR = Color.yellow;
+    private static final int PART_SIZE = 50;
 
-    private int tail_amount = 3;
+    private static final Color APPLE_COLOR = Color.red;
+    private static final Color HEAD_COLOR = Color.orange;
+    private static final Color TAIL_COLOR = Color.yellow;
 
-    private int[] snake_x = new int[WIDTH * HEIGHT / (PART_SIZE * PART_SIZE)];
-    private int[] snake_y = new int[WIDTH * HEIGHT / (PART_SIZE * PART_SIZE)];
+    private static final int SNAKE_SPAWN_TAIL_AMOUNT = 2;
 
-    protected Direction direction = Direction.RIGHT;
+    private static final int SNAKE_SPAWN_X = PART_SIZE * SNAKE_SPAWN_TAIL_AMOUNT;
+    private static final int SNAKE_SPAWN_Y = 0;
+
+    private static final int GAME_SPEED = 200;
+
+    private static Game game;
+
+    private int tail_amount = SNAKE_SPAWN_TAIL_AMOUNT + 1;
+
+    private final int[] snake_x = new int[WIDTH * HEIGHT / (PART_SIZE * PART_SIZE)];
+    private final int[] snake_y = new int[WIDTH * HEIGHT / (PART_SIZE * PART_SIZE)];
+
+    Direction direction = Direction.RIGHT;
+
+    boolean alreadyMovedInTick;
 
     private int apple_x;
     private int apple_y;
 
-    private Timer timer;
-
-    private final int GAME_SPEED = 200;
-
-    protected boolean alreadyMovedInTick;
+    private final Timer timer;
 
     private boolean running;
 
 
     public Game() {
 
+        game = this;
+
         addKeyListener(new KeyListener());
-        setPreferredSize(new Dimension(WIDTH, HEIGHT));
+
         setFocusable(true);
-        setBackground(Color.DARK_GRAY);
+
+        setBackground(BACKGROUND_COLOR);
 
         for (int i = 0; i < tail_amount; i++) {
 
-            snake_x[i] = 100 - i * 10;
-            snake_y[i] = 100;
+            snake_x[i] = SNAKE_SPAWN_X - i * PART_SIZE;
+            snake_y[i] = SNAKE_SPAWN_Y;
 
         }
 
@@ -100,6 +115,7 @@ public class Game extends JPanel implements ActionListener {
         if (snake_x[0] == apple_x && snake_y[0] == apple_y) {
 
             tail_amount++;
+
             spawn_apple();
 
         }
@@ -129,6 +145,11 @@ public class Game extends JPanel implements ActionListener {
         if (!running) {
 
             timer.stop();
+
+            getParent().add(new MainMenu());
+
+            setVisible(false);
+            getParent().remove(this);
 
         }
 
@@ -160,6 +181,8 @@ public class Game extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent event) {
+
+        requestFocus();
 
         if (running) {
 
@@ -198,18 +221,14 @@ public class Game extends JPanel implements ActionListener {
 
             Toolkit.getDefaultToolkit().sync();
 
-        } else {
-
-            String text = "Game Over";
-
-            Font font = new Font("Calibri", Font.BOLD, 50);
-            FontMetrics fontMetrics = getFontMetrics(font);
-
-            graphics.setColor(Color.RED);
-            graphics.setFont(font);
-            graphics.drawString(text, (WIDTH - fontMetrics.stringWidth(text)) / 2, HEIGHT / 2);
-
         }
+
+    }
+
+
+    public static Game getGame() {
+
+        return game;
 
     }
 

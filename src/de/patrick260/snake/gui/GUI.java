@@ -15,17 +15,34 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-package de.patrick260.snake.main;
+package de.patrick260.snake.gui;
 
-import de.patrick260.snake.gui.GUI;
+import de.patrick260.snake.menu.MainMenu;
 
+import javax.swing.*;
 import java.awt.*;
 
-public class Snake {
+public class GUI extends JFrame {
 
-    public static void main(String[] args) {
+    public static final int WIDTH = 900;
+    public static final int HEIGHT = 900;
 
-        EventQueue.invokeLater(() -> new GUI().setVisible(true));
+    public static final String TITLE = "Snake";
+
+    public static final Color BACKGROUND_COLOR = new Color(129, 129, 129);
+
+
+    public GUI() {
+
+        setTitle(TITLE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(false);
+
+        add(new MainMenu());
+
+        pack();
+
+        setLocationRelativeTo(null);
 
     }
 

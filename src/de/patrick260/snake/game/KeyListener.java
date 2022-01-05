@@ -17,8 +17,6 @@
 
 package de.patrick260.snake.game;
 
-import de.patrick260.snake.main.Snake;
-
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
@@ -26,32 +24,34 @@ public class KeyListener extends KeyAdapter {
 
     @Override
     public void keyPressed(KeyEvent event) {
+        
+        Game game = Game.getGame();
 
         int key_id = event.getKeyCode();
 
-        if (key_id == KeyEvent.VK_LEFT && Snake.game.direction != Direction.LEFT && Snake.game.direction != Direction.RIGHT && !Snake.game.alreadyMovedInTick) {
+        if (key_id == KeyEvent.VK_LEFT && game.direction != Direction.LEFT && game.direction != Direction.RIGHT && !game.alreadyMovedInTick) {
 
-            Snake.game.direction = Direction.LEFT;
+            game.direction = Direction.LEFT;
 
-            Snake.game.alreadyMovedInTick = true;
+            game.alreadyMovedInTick = true;
 
-        } else if (key_id == KeyEvent.VK_RIGHT && Snake.game.direction != Direction.RIGHT && Snake.game.direction != Direction.LEFT && !Snake.game.alreadyMovedInTick) {
+        } else if (key_id == KeyEvent.VK_RIGHT && game.direction != Direction.RIGHT && game.direction != Direction.LEFT && !game.alreadyMovedInTick) {
 
-            Snake.game.direction = Direction.RIGHT;
+            game.direction = Direction.RIGHT;
 
-            Snake.game.alreadyMovedInTick = true;
+            game.alreadyMovedInTick = true;
 
-        } else if (key_id == KeyEvent.VK_UP && Snake.game.direction != Direction.UP && Snake.game.direction != Direction.DOWN && !Snake.game.alreadyMovedInTick) {
+        } else if (key_id == KeyEvent.VK_UP && game.direction != Direction.UP && game.direction != Direction.DOWN && !game.alreadyMovedInTick) {
 
-            Snake.game.direction = Direction.UP;
+            game.direction = Direction.UP;
 
-            Snake.game.alreadyMovedInTick = true;
+            game.alreadyMovedInTick = true;
 
-        } else if (key_id == KeyEvent.VK_DOWN && Snake.game.direction != Direction.DOWN && Snake.game.direction != Direction.UP && !Snake.game.alreadyMovedInTick) {
+        } else if (key_id == KeyEvent.VK_DOWN && game.direction != Direction.DOWN && game.direction != Direction.UP && !game.alreadyMovedInTick) {
 
-            Snake.game.direction = Direction.DOWN;
+            game.direction = Direction.DOWN;
 
-            Snake.game.alreadyMovedInTick = true;
+            game.alreadyMovedInTick = true;
 
         }
 
