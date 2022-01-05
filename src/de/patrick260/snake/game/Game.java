@@ -126,7 +126,7 @@ public class Game extends JPanel implements ActionListener {
 
     private void checkDeath() {
 
-        for (int i = tail_amount; i > 3; i--) {
+        for (int i = tail_amount - 1; i > 3; i--) {
 
             if (snake_x[0] == snake_x[i] && snake_y[0] == snake_y[i]) {
 
