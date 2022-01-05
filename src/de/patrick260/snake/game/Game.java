@@ -35,9 +35,11 @@ public class Game extends JPanel implements ActionListener {
 
     private static final int PART_SIZE = 25;
 
-    private static final Color APPLE_COLOR = Color.red;
-    private static final Color HEAD_COLOR = Color.orange;
-    private static final Color TAIL_COLOR = Color.yellow;
+    private static final Color APPLE_COLOR = Color.RED;
+    private static final Color HEAD_COLOR = Color.ORANGE;
+    private static final Color TAIL_COLOR = Color.YELLOW;
+
+    private static final Color OUTLINE_COLOR = Color.BLACK;
 
     private static final int SNAKE_SPAWN_TAIL_AMOUNT = 2;
 
@@ -238,16 +240,22 @@ public class Game extends JPanel implements ActionListener {
 
             graphics.setColor(APPLE_COLOR);
             graphics.fillRect(apple_x, apple_y, PART_SIZE, PART_SIZE);
+            graphics.setColor(OUTLINE_COLOR);
+            graphics.drawRect(apple_x, apple_y, PART_SIZE, PART_SIZE);
 
             for (int i = 1; i < tail_amount; i++) {
 
                 graphics.setColor(TAIL_COLOR);
                 graphics.fillRect(snake_x[i], snake_y[i], PART_SIZE, PART_SIZE);
+                graphics.setColor(OUTLINE_COLOR);
+                graphics.drawRect(snake_x[i], snake_y[i], PART_SIZE, PART_SIZE);
 
             }
 
             graphics.setColor(HEAD_COLOR);
             graphics.fillRect(snake_x[0], snake_y[0], PART_SIZE, PART_SIZE);
+            graphics.setColor(OUTLINE_COLOR);
+            graphics.drawRect(snake_x[0], snake_y[0], PART_SIZE, PART_SIZE);
 
             Toolkit.getDefaultToolkit().sync();
 
