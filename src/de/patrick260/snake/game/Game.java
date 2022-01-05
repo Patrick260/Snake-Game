@@ -19,7 +19,6 @@ package de.patrick260.snake.game;
 
 import de.patrick260.snake.gui.GUI;
 import de.patrick260.snake.gui.GameOverScreen;
-import de.patrick260.snake.menu.MainMenu;
 
 import javax.swing.*;
 import java.awt.*;
