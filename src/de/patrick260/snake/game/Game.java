@@ -46,7 +46,7 @@ public class Game extends JPanel implements ActionListener {
     private static final int SNAKE_SPAWN_X = PART_SIZE * SNAKE_SPAWN_TAIL_AMOUNT;
     private static final int SNAKE_SPAWN_Y = 0;
 
-    private static final int GAME_SPEED = 200;
+    private static final int GAME_SPEED = 100;
 
     private static Game game;
 
