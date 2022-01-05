@@ -61,7 +61,9 @@ public class Game extends JPanel implements ActionListener {
 
     private final Timer timer;
 
-    private boolean running;
+    private boolean isDeath = false;
+
+    public boolean running;
 
 
     public Game() {
@@ -128,7 +130,7 @@ public class Game extends JPanel implements ActionListener {
 
             if (snake_x[0] == snake_x[i] && snake_y[0] == snake_y[i]) {
 
-                running = false;
+                isDeath = true;
 
                 break;
 
@@ -138,11 +140,13 @@ public class Game extends JPanel implements ActionListener {
 
         if (snake_x[0] > WIDTH || snake_x[0] < 0 || snake_y[0] > HEIGHT || snake_y[0] < 0) {
 
-            running = false;
+            isDeath = true;
 
         }
 
-        if (!running) {
+        if (isDeath) {
+
+            running = false;
 
             timer.stop();
 

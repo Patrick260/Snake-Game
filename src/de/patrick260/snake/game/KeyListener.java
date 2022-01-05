@@ -17,6 +17,8 @@
 
 package de.patrick260.snake.game;
 
+import de.patrick260.snake.menu.PauseMenu;
+
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
@@ -52,6 +54,14 @@ public class KeyListener extends KeyAdapter {
             game.direction = Direction.DOWN;
 
             game.alreadyMovedInTick = true;
+
+        } else if (key_id == KeyEvent.VK_ESCAPE) {
+
+            game.running = false;
+
+            game.setVisible(false);
+
+            game.getParent().add(new PauseMenu());
 
         }
 
