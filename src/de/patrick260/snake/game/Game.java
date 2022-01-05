@@ -161,7 +161,7 @@ public class Game extends JPanel implements ActionListener {
 
     private void moveSnake() {
 
-        for (int i = tail_amount; i > 0; i--) {
+        for (int i = tail_amount - 1; i > 0; i--) {
 
             snake_x[i] = snake_x[i - 1];
             snake_y[i] = snake_y[i - 1];
