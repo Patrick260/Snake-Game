@@ -68,6 +68,7 @@ public class GameOverScreen extends JPanel {
         JTextField game_over_text = new JTextField(GAME_OVER_TEXT);
 
         game_over_text.setEditable(false);
+        game_over_text.setFocusable(false);
         game_over_text.setForeground(GAME_OVER_TEXT_COLOR);
         game_over_text.setBackground(BACKGROUND_COLOR);
         game_over_text.setBorder(null);

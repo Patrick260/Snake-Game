@@ -69,6 +69,7 @@ public class PauseMenu extends JPanel {
         JTextField pause_text = new JTextField(PAUSE_TEXT);
 
         pause_text.setEditable(false);
+        pause_text.setFocusable(false);
         pause_text.setForeground(PAUSE_TEXT_COLOR);
         pause_text.setBackground(BACKGROUND_COLOR);
         pause_text.setBorder(null);

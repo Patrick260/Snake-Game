@@ -69,6 +69,7 @@ public class MainMenu extends JPanel {
         JTextField title = new JTextField(TITLE);
 
         title.setEditable(false);
+        title.setFocusable(false);
         title.setForeground(TITLE_COLOR);
         title.setBackground(BACKGROUND_COLOR);
         title.setBorder(null);
