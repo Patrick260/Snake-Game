@@ -24,7 +24,7 @@ import de.patrick260.snake.gui.GUI;
 import javax.swing.*;
 import java.awt.*;
 
-public class PauseMenu extends JPanel {
+public final class PauseMenu extends JPanel {
 
     private static final int WIDTH = GUI.WIDTH;
     private static final int HEIGHT = GUI.HEIGHT;
@@ -66,7 +66,7 @@ public class PauseMenu extends JPanel {
 
         setBackground(BACKGROUND_COLOR);
 
-        JTextField pause_text = new JTextField(PAUSE_TEXT);
+        final JTextField pause_text = new JTextField(PAUSE_TEXT);
 
         pause_text.setEditable(false);
         pause_text.setFocusable(false);
@@ -79,7 +79,7 @@ public class PauseMenu extends JPanel {
 
         add(pause_text);
 
-        JButton resume_button = new JButton();
+        final JButton resume_button = new JButton();
 
         resume_button.setBounds((WIDTH - BUTTON_WIDTH) / 2, (HEIGHT - BUTTON_HEIGHT) / 2 - (BUTTON_HEIGHT + GAP_BETWEEN_BUTTONS) / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
         resume_button.setBackground(BUTTON_COLOR);
@@ -101,7 +101,7 @@ public class PauseMenu extends JPanel {
 
         add(resume_button);
 
-        JButton menu_button = new JButton();
+        final JButton menu_button = new JButton();
 
         menu_button.setBounds((WIDTH - BUTTON_WIDTH) / 2, (HEIGHT - BUTTON_HEIGHT) / 2 + (BUTTON_HEIGHT + GAP_BETWEEN_BUTTONS) / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
         menu_button.setBackground(BUTTON_COLOR);

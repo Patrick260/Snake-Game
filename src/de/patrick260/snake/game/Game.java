@@ -26,7 +26,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class Game extends JPanel implements ActionListener {
+public final class Game extends JPanel implements ActionListener {
 
     private static final int WIDTH = GUI.WIDTH;
     private static final int HEIGHT = GUI.HEIGHT;
@@ -104,7 +104,7 @@ public class Game extends JPanel implements ActionListener {
 
     private void spawn_apple() {
 
-        String[] random = possibleApplePositions.get((int) (Math.random() * possibleApplePositions.size() - 1)).split("-");
+        final String[] random = possibleApplePositions.get((int) (Math.random() * possibleApplePositions.size() - 1)).split("-");
 
         apple_x = Integer.parseInt(random[0]);
         apple_y = Integer.parseInt(random[1]);
@@ -193,7 +193,7 @@ public class Game extends JPanel implements ActionListener {
 
     public ArrayList<String> generatePossibleApplePositions() {
 
-        ArrayList<String> possibleApplePositions = new ArrayList<>();
+        final ArrayList<String> possibleApplePositions = new ArrayList<>();
 
         for (int i = 0; i < WIDTH; i+= PART_SIZE) {
 
@@ -211,7 +211,7 @@ public class Game extends JPanel implements ActionListener {
 
 
     @Override
-    public void actionPerformed(ActionEvent event) {
+    public void actionPerformed(final ActionEvent event) {
 
         requestFocus();
 
@@ -232,7 +232,7 @@ public class Game extends JPanel implements ActionListener {
 
 
     @Override
-    public void paintComponent(Graphics graphics) {
+    public void paintComponent(final Graphics graphics) {
 
         super.paintComponent(graphics);
 

@@ -21,9 +21,9 @@ import de.patrick260.snake.gui.GUI;
 
 import java.awt.*;
 
-public class Snake {
+public final class Snake {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         EventQueue.invokeLater(() -> new GUI().setVisible(true));
 

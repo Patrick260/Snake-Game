@@ -22,12 +22,12 @@ import de.patrick260.snake.menu.PauseMenu;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class KeyListener extends KeyAdapter {
+public final class KeyListener extends KeyAdapter {
 
     @Override
-    public void keyPressed(KeyEvent event) {
-        
-        Game game = Game.getGame();
+    public void keyPressed(final KeyEvent event) {
+
+        final Game game = Game.getGame();
 
         int key_id = event.getKeyCode();
 

@@ -24,7 +24,7 @@ import de.patrick260.snake.gui.GUI;
 import javax.swing.*;
 import java.awt.*;
 
-public class MainMenu extends JPanel {
+public final class MainMenu extends JPanel {
 
     private static final int WIDTH = GUI.WIDTH;
     private static final int HEIGHT = GUI.HEIGHT;
@@ -66,7 +66,7 @@ public class MainMenu extends JPanel {
 
         setBackground(BACKGROUND_COLOR);
 
-        JTextField title = new JTextField(TITLE);
+        final JTextField title = new JTextField(TITLE);
 
         title.setEditable(false);
         title.setFocusable(false);
@@ -79,7 +79,7 @@ public class MainMenu extends JPanel {
 
         add(title);
 
-        JButton play_button = new JButton();
+        final JButton play_button = new JButton();
 
         play_button.setBounds((WIDTH - BUTTON_WIDTH) / 2, (HEIGHT - BUTTON_HEIGHT) / 2 - (BUTTON_HEIGHT + GAP_BETWEEN_BUTTONS) / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
         play_button.setBackground(BUTTON_COLOR);
@@ -100,7 +100,7 @@ public class MainMenu extends JPanel {
 
         add(play_button);
 
-        JButton exit_button = new JButton();
+        final JButton exit_button = new JButton();
 
         exit_button.setBounds((WIDTH - BUTTON_WIDTH) / 2, (HEIGHT - BUTTON_HEIGHT) / 2 + (BUTTON_HEIGHT + GAP_BETWEEN_BUTTONS) / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
         exit_button.setBackground(BUTTON_COLOR);

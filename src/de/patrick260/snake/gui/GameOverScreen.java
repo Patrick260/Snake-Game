@@ -23,7 +23,7 @@ import de.patrick260.snake.menu.MainMenu;
 import javax.swing.*;
 import java.awt.*;
 
-public class GameOverScreen extends JPanel {
+public final class GameOverScreen extends JPanel {
 
     private static final int WIDTH = GUI.WIDTH;
     private static final int HEIGHT = GUI.HEIGHT;
@@ -65,7 +65,7 @@ public class GameOverScreen extends JPanel {
 
         setBackground(BACKGROUND_COLOR);
 
-        JTextField game_over_text = new JTextField(GAME_OVER_TEXT);
+        final JTextField game_over_text = new JTextField(GAME_OVER_TEXT);
 
         game_over_text.setEditable(false);
         game_over_text.setFocusable(false);
@@ -78,7 +78,7 @@ public class GameOverScreen extends JPanel {
 
         add(game_over_text);
 
-        JButton play_again_button = new JButton();
+        final JButton play_again_button = new JButton();
 
         play_again_button.setBounds((WIDTH - BUTTON_WIDTH) / 2, (HEIGHT - BUTTON_HEIGHT) / 2 - (BUTTON_HEIGHT + GAP_BETWEEN_BUTTONS) / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
         play_again_button.setBackground(BUTTON_COLOR);
@@ -99,7 +99,7 @@ public class GameOverScreen extends JPanel {
 
         add(play_again_button);
 
-        JButton menu_button = new JButton();
+        final JButton menu_button = new JButton();
 
         menu_button.setBounds((WIDTH - BUTTON_WIDTH) / 2, (HEIGHT - BUTTON_HEIGHT) / 2 + (BUTTON_HEIGHT + GAP_BETWEEN_BUTTONS) / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
         menu_button.setBackground(BUTTON_COLOR);

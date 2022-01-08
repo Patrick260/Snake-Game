@@ -19,7 +19,7 @@ package de.patrick260.snake.gui;
 
 import javax.swing.*;
 
-public class FixedStateButtonModel extends DefaultButtonModel {
+public final class FixedStateButtonModel extends DefaultButtonModel {
 
     @Override
     public boolean isPressed() {
