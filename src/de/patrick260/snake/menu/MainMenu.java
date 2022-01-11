@@ -116,5 +116,4 @@ public final class MainMenu extends JPanel {
 
     }
 
-
 }
