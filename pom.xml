@@ -28,8 +28,11 @@
 
     <build>
         <resources>
-            <resource>
-                <directory>/LICENSE</directory>
+        <resource>
+            <directory></directory>
+                <includes>
+                    <include>/LICENSE</include>
+                </includes>
             </resource>
         </resources>
 
