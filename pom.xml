@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
 
     <name>Snake-Game</name>
-    <description>A simple snake game written in Java. </description>
+    <description>A simple snake game written in Java.</description>
     <url>patrick260.itch.io/snake-game</url>
     <inceptionYear>2022</inceptionYear>
 
