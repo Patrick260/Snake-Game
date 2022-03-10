@@ -29,7 +29,7 @@ public final class KeyListener extends KeyAdapter {
 
         final Game game = Game.getGame();
 
-        int key_id = event.getKeyCode();
+        final int key_id = event.getKeyCode();
 
         if (key_id == KeyEvent.VK_LEFT && game.direction != Direction.LEFT && game.direction != Direction.RIGHT && !game.alreadyMovedInTick) {
 
