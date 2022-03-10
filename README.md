@@ -2,7 +2,7 @@
 A simple snake game written in Java.
 
 ## How to play
-Download the latest release. Ensure that a compatible Java runtime is installed (optimal Java 16). Than start the game per command line with the command: java -jar Snake-Game.jar.
+Download the latest release. Ensure that a compatible Java runtime is installed (optimal Java 16). Then start the game per command line with the command: java -jar Snake-Game.jar.
 
 ## Screenshots
 ![Failed to load image](https://i.ibb.co/dmGC49N/mainMenu.png)
