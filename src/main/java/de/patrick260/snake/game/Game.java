@@ -50,10 +50,10 @@ public final class Game extends JPanel implements ActionListener {
 
     private static Game game;
 
-    private int tail_amount = SNAKE_SPAWN_TAIL_AMOUNT + 1;
+    private int tailAmount = SNAKE_SPAWN_TAIL_AMOUNT + 1;
 
-    private final int[] snake_x = new int[WIDTH * HEIGHT / (PART_SIZE * PART_SIZE)];
-    private final int[] snake_y = new int[WIDTH * HEIGHT / (PART_SIZE * PART_SIZE)];
+    private final int[] snakeX = new int[WIDTH * HEIGHT / (PART_SIZE * PART_SIZE)];
+    private final int[] snakeY = new int[WIDTH * HEIGHT / (PART_SIZE * PART_SIZE)];
 
     Direction direction = Direction.RIGHT;
 
@@ -61,8 +61,8 @@ public final class Game extends JPanel implements ActionListener {
 
     private final ArrayList<String> possibleApplePositions = generatePossibleApplePositions();
 
-    private int apple_x;
-    private int apple_y;
+    private int appleX;
+    private int appleY;
 
     private boolean appleCollectedInTick;
 
@@ -83,12 +83,12 @@ public final class Game extends JPanel implements ActionListener {
 
         setBackground(BACKGROUND_COLOR);
 
-        for (int i = 0; i < tail_amount; i++) {
+        for (int i = 0; i < tailAmount; i++) {
 
-            snake_x[i] = SNAKE_SPAWN_X - i * PART_SIZE;
-            snake_y[i] = SNAKE_SPAWN_Y;
+            snakeX[i] = SNAKE_SPAWN_X - i * PART_SIZE;
+            snakeY[i] = SNAKE_SPAWN_Y;
 
-            possibleApplePositions.remove(snake_x[i] + "-" + snake_y[i]);
+            possibleApplePositions.remove(snakeX[i] + "-" + snakeY[i]);
 
         }
 
@@ -106,16 +106,16 @@ public final class Game extends JPanel implements ActionListener {
 
         final String[] random = possibleApplePositions.get((int) (Math.random() * possibleApplePositions.size() - 1)).split("-");
 
-        apple_x = Integer.parseInt(random[0]);
-        apple_y = Integer.parseInt(random[1]);
+        appleX = Integer.parseInt(random[0]);
+        appleY = Integer.parseInt(random[1]);
 
     }
 
     private void checkApple() {
 
-        if (snake_x[0] == apple_x && snake_y[0] == apple_y) {
+        if (snakeX[0] == appleX && snakeY[0] == appleY) {
 
-            tail_amount++;
+            tailAmount++;
 
             appleCollectedInTick = true;
 
@@ -127,9 +127,9 @@ public final class Game extends JPanel implements ActionListener {
 
     private void checkDeath() {
 
-        for (int i = tail_amount - 1; i > 3; i--) {
+        for (int i = tailAmount - 1; i > 3; i--) {
 
-            if (snake_x[0] == snake_x[i] && snake_y[0] == snake_y[i]) {
+            if (snakeX[0] == snakeX[i] && snakeY[0] == snakeY[i]) {
 
                 isDeath = true;
 
@@ -139,7 +139,7 @@ public final class Game extends JPanel implements ActionListener {
 
         }
 
-        if (snake_x[0] > WIDTH - PART_SIZE || snake_x[0] < 0 || snake_y[0] > HEIGHT - PART_SIZE || snake_y[0] < 0) {
+        if (snakeX[0] > WIDTH - PART_SIZE || snakeX[0] < 0 || snakeY[0] > HEIGHT - PART_SIZE || snakeY[0] < 0) {
 
             isDeath = true;
 
@@ -164,30 +164,30 @@ public final class Game extends JPanel implements ActionListener {
 
         if (!appleCollectedInTick) {
 
-            possibleApplePositions.add(snake_x[tail_amount - 1] + "-" + snake_y[tail_amount - 1]);
+            possibleApplePositions.add(snakeX[tailAmount - 1] + "-" + snakeY[tailAmount - 1]);
 
         }
 
-        for (int i = tail_amount - 1; i > 0; i--) {
+        for (int i = tailAmount - 1; i > 0; i--) {
 
-            snake_x[i] = snake_x[i - 1];
-            snake_y[i] = snake_y[i - 1];
+            snakeX[i] = snakeX[i - 1];
+            snakeY[i] = snakeY[i - 1];
 
         }
 
         switch (direction) {
 
-            case LEFT -> snake_x[0] -= PART_SIZE;
+            case LEFT -> snakeX[0] -= PART_SIZE;
 
-            case RIGHT -> snake_x[0] += PART_SIZE;
+            case RIGHT -> snakeX[0] += PART_SIZE;
 
-            case UP -> snake_y[0] -= PART_SIZE;
+            case UP -> snakeY[0] -= PART_SIZE;
 
-            case DOWN -> snake_y[0] += PART_SIZE;
+            case DOWN -> snakeY[0] += PART_SIZE;
 
         }
 
-        possibleApplePositions.remove(snake_x[0] + "-" + snake_y[0]);
+        possibleApplePositions.remove(snakeX[0] + "-" + snakeY[0]);
 
     }
 
@@ -239,23 +239,23 @@ public final class Game extends JPanel implements ActionListener {
         if (running) {
 
             graphics.setColor(APPLE_COLOR);
-            graphics.fillRect(apple_x, apple_y, PART_SIZE, PART_SIZE);
+            graphics.fillRect(appleX, appleY, PART_SIZE, PART_SIZE);
             graphics.setColor(OUTLINE_COLOR);
-            graphics.drawRect(apple_x, apple_y, PART_SIZE, PART_SIZE);
+            graphics.drawRect(appleX, appleY, PART_SIZE, PART_SIZE);
 
-            for (int i = 1; i < tail_amount; i++) {
+            for (int i = 1; i < tailAmount; i++) {
 
                 graphics.setColor(TAIL_COLOR);
-                graphics.fillRect(snake_x[i], snake_y[i], PART_SIZE, PART_SIZE);
+                graphics.fillRect(snakeX[i], snakeY[i], PART_SIZE, PART_SIZE);
                 graphics.setColor(OUTLINE_COLOR);
-                graphics.drawRect(snake_x[i], snake_y[i], PART_SIZE, PART_SIZE);
+                graphics.drawRect(snakeX[i], snakeY[i], PART_SIZE, PART_SIZE);
 
             }
 
             graphics.setColor(HEAD_COLOR);
-            graphics.fillRect(snake_x[0], snake_y[0], PART_SIZE, PART_SIZE);
+            graphics.fillRect(snakeX[0], snakeY[0], PART_SIZE, PART_SIZE);
             graphics.setColor(OUTLINE_COLOR);
-            graphics.drawRect(snake_x[0], snake_y[0], PART_SIZE, PART_SIZE);
+            graphics.drawRect(snakeX[0], snakeY[0], PART_SIZE, PART_SIZE);
 
             Toolkit.getDefaultToolkit().sync();
 
