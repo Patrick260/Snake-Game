@@ -29,33 +29,33 @@ public final class KeyListener extends KeyAdapter {
 
         final Game game = Game.getGame();
 
-        final int key_id = event.getKeyCode();
+        final int keyId = event.getKeyCode();
 
-        if (key_id == KeyEvent.VK_LEFT && game.direction != Direction.LEFT && game.direction != Direction.RIGHT && !game.alreadyMovedInTick) {
+        if (keyId == KeyEvent.VK_LEFT && game.direction != Direction.LEFT && game.direction != Direction.RIGHT && !game.alreadyMovedInTick) {
 
             game.direction = Direction.LEFT;
 
             game.alreadyMovedInTick = true;
 
-        } else if (key_id == KeyEvent.VK_RIGHT && game.direction != Direction.RIGHT && game.direction != Direction.LEFT && !game.alreadyMovedInTick) {
+        } else if (keyId == KeyEvent.VK_RIGHT && game.direction != Direction.RIGHT && game.direction != Direction.LEFT && !game.alreadyMovedInTick) {
 
             game.direction = Direction.RIGHT;
 
             game.alreadyMovedInTick = true;
 
-        } else if (key_id == KeyEvent.VK_UP && game.direction != Direction.UP && game.direction != Direction.DOWN && !game.alreadyMovedInTick) {
+        } else if (keyId == KeyEvent.VK_UP && game.direction != Direction.UP && game.direction != Direction.DOWN && !game.alreadyMovedInTick) {
 
             game.direction = Direction.UP;
 
             game.alreadyMovedInTick = true;
 
-        } else if (key_id == KeyEvent.VK_DOWN && game.direction != Direction.DOWN && game.direction != Direction.UP && !game.alreadyMovedInTick) {
+        } else if (keyId == KeyEvent.VK_DOWN && game.direction != Direction.DOWN && game.direction != Direction.UP && !game.alreadyMovedInTick) {
 
             game.direction = Direction.DOWN;
 
             game.alreadyMovedInTick = true;
 
-        } else if (key_id == KeyEvent.VK_ESCAPE) {
+        } else if (keyId == KeyEvent.VK_ESCAPE) {
 
             game.running = false;
 
