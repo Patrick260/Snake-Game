@@ -65,30 +65,30 @@ public final class GameOverScreen extends JPanel {
 
         setBackground(BACKGROUND_COLOR);
 
-        final JTextField game_over_text = new JTextField(GAME_OVER_TEXT);
+        final JTextField gameOverText = new JTextField(GAME_OVER_TEXT);
 
-        game_over_text.setEditable(false);
-        game_over_text.setFocusable(false);
-        game_over_text.setForeground(GAME_OVER_TEXT_COLOR);
-        game_over_text.setBackground(BACKGROUND_COLOR);
-        game_over_text.setBorder(null);
-        game_over_text.setFont(new Font(GAME_OVER_TEXT_FONT, GAME_OVER_TEXT_STYLE, GAME_OVER_TEXT_SIZE));
-        game_over_text.setHorizontalAlignment(JTextField.CENTER);
-        game_over_text.setBounds((WIDTH - GAME_OVER_TEXT_WIDTH) / 2, GAME_OVER_TEXT_Y, GAME_OVER_TEXT_WIDTH, GAME_OVER_TEXT_HEIGHT);
+        gameOverText.setEditable(false);
+        gameOverText.setFocusable(false);
+        gameOverText.setForeground(GAME_OVER_TEXT_COLOR);
+        gameOverText.setBackground(BACKGROUND_COLOR);
+        gameOverText.setBorder(null);
+        gameOverText.setFont(new Font(GAME_OVER_TEXT_FONT, GAME_OVER_TEXT_STYLE, GAME_OVER_TEXT_SIZE));
+        gameOverText.setHorizontalAlignment(JTextField.CENTER);
+        gameOverText.setBounds((WIDTH - GAME_OVER_TEXT_WIDTH) / 2, GAME_OVER_TEXT_Y, GAME_OVER_TEXT_WIDTH, GAME_OVER_TEXT_HEIGHT);
 
-        add(game_over_text);
+        add(gameOverText);
 
-        final JButton play_again_button = new JButton();
+        final JButton playAgainButton = new JButton();
 
-        play_again_button.setBounds((WIDTH - BUTTON_WIDTH) / 2, (HEIGHT - BUTTON_HEIGHT) / 2 - (BUTTON_HEIGHT + GAP_BETWEEN_BUTTONS) / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
-        play_again_button.setBackground(BUTTON_COLOR);
-        play_again_button.setModel(new FixedStateButtonModel());
-        play_again_button.setText("Play again");
-        play_again_button.setFont(new Font(BUTTON_FONT, BUTTON_STYLE, BUTTON_TEXT_SIZE));
-        play_again_button.setForeground(BUTTON_TEXT_COLOR);
-        play_again_button.setFocusPainted(false);
+        playAgainButton.setBounds((WIDTH - BUTTON_WIDTH) / 2, (HEIGHT - BUTTON_HEIGHT) / 2 - (BUTTON_HEIGHT + GAP_BETWEEN_BUTTONS) / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
+        playAgainButton.setBackground(BUTTON_COLOR);
+        playAgainButton.setModel(new FixedStateButtonModel());
+        playAgainButton.setText("Play again");
+        playAgainButton.setFont(new Font(BUTTON_FONT, BUTTON_STYLE, BUTTON_TEXT_SIZE));
+        playAgainButton.setForeground(BUTTON_TEXT_COLOR);
+        playAgainButton.setFocusPainted(false);
 
-        play_again_button.addActionListener(event -> {
+        playAgainButton.addActionListener(event -> {
 
             getParent().add(new Game());
 
@@ -97,19 +97,19 @@ public final class GameOverScreen extends JPanel {
 
         });
 
-        add(play_again_button);
+        add(playAgainButton);
 
-        final JButton menu_button = new JButton();
+        final JButton menuButton = new JButton();
 
-        menu_button.setBounds((WIDTH - BUTTON_WIDTH) / 2, (HEIGHT - BUTTON_HEIGHT) / 2 + (BUTTON_HEIGHT + GAP_BETWEEN_BUTTONS) / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
-        menu_button.setBackground(BUTTON_COLOR);
-        menu_button.setModel(new FixedStateButtonModel());
-        menu_button.setText("Menu");
-        menu_button.setFont(new Font(BUTTON_FONT, BUTTON_STYLE, BUTTON_TEXT_SIZE));
-        menu_button.setForeground(BUTTON_TEXT_COLOR);
-        menu_button.setFocusPainted(false);
+        menuButton.setBounds((WIDTH - BUTTON_WIDTH) / 2, (HEIGHT - BUTTON_HEIGHT) / 2 + (BUTTON_HEIGHT + GAP_BETWEEN_BUTTONS) / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
+        menuButton.setBackground(BUTTON_COLOR);
+        menuButton.setModel(new FixedStateButtonModel());
+        menuButton.setText("Menu");
+        menuButton.setFont(new Font(BUTTON_FONT, BUTTON_STYLE, BUTTON_TEXT_SIZE));
+        menuButton.setForeground(BUTTON_TEXT_COLOR);
+        menuButton.setFocusPainted(false);
 
-        menu_button.addActionListener(event -> {
+        menuButton.addActionListener(event -> {
 
             getParent().add(new MainMenu());
 
@@ -118,7 +118,7 @@ public final class GameOverScreen extends JPanel {
 
         });
 
-        add(menu_button);
+        add(menuButton);
 
     }
 
