@@ -66,30 +66,30 @@ public final class PauseMenu extends JPanel {
 
         setBackground(BACKGROUND_COLOR);
 
-        final JTextField pause_text = new JTextField(PAUSE_TEXT);
+        final JTextField pauseText = new JTextField(PAUSE_TEXT);
 
-        pause_text.setEditable(false);
-        pause_text.setFocusable(false);
-        pause_text.setForeground(PAUSE_TEXT_COLOR);
-        pause_text.setBackground(BACKGROUND_COLOR);
-        pause_text.setBorder(null);
-        pause_text.setFont(new Font(PAUSE_TEXT_FONT, PAUSE_TEXT_STYLE, PAUSE_TEXT_SIZE));
-        pause_text.setHorizontalAlignment(JTextField.CENTER);
-        pause_text.setBounds((WIDTH - PAUSE_TEXT_WIDTH) / 2, PAUSE_TEXT_Y, PAUSE_TEXT_WIDTH, PAUSE_TEXT_HEIGHT);
+        pauseText.setEditable(false);
+        pauseText.setFocusable(false);
+        pauseText.setForeground(PAUSE_TEXT_COLOR);
+        pauseText.setBackground(BACKGROUND_COLOR);
+        pauseText.setBorder(null);
+        pauseText.setFont(new Font(PAUSE_TEXT_FONT, PAUSE_TEXT_STYLE, PAUSE_TEXT_SIZE));
+        pauseText.setHorizontalAlignment(JTextField.CENTER);
+        pauseText.setBounds((WIDTH - PAUSE_TEXT_WIDTH) / 2, PAUSE_TEXT_Y, PAUSE_TEXT_WIDTH, PAUSE_TEXT_HEIGHT);
 
-        add(pause_text);
+        add(pauseText);
 
-        final JButton resume_button = new JButton();
+        final JButton resumeButton = new JButton();
 
-        resume_button.setBounds((WIDTH - BUTTON_WIDTH) / 2, (HEIGHT - BUTTON_HEIGHT) / 2 - (BUTTON_HEIGHT + GAP_BETWEEN_BUTTONS) / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
-        resume_button.setBackground(BUTTON_COLOR);
-        resume_button.setModel(new FixedStateButtonModel());
-        resume_button.setText("Resume");
-        resume_button.setFont(new Font(BUTTON_FONT, BUTTON_STYLE, BUTTON_TEXT_SIZE));
-        resume_button.setForeground(BUTTON_TEXT_COLOR);
-        resume_button.setFocusPainted(false);
+        resumeButton.setBounds((WIDTH - BUTTON_WIDTH) / 2, (HEIGHT - BUTTON_HEIGHT) / 2 - (BUTTON_HEIGHT + GAP_BETWEEN_BUTTONS) / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
+        resumeButton.setBackground(BUTTON_COLOR);
+        resumeButton.setModel(new FixedStateButtonModel());
+        resumeButton.setText("Resume");
+        resumeButton.setFont(new Font(BUTTON_FONT, BUTTON_STYLE, BUTTON_TEXT_SIZE));
+        resumeButton.setForeground(BUTTON_TEXT_COLOR);
+        resumeButton.setFocusPainted(false);
 
-        resume_button.addActionListener(event -> {
+        resumeButton.addActionListener(event -> {
 
             Game.getGame().setVisible(true);
             Game.getGame().running = true;
@@ -99,19 +99,19 @@ public final class PauseMenu extends JPanel {
 
         });
 
-        add(resume_button);
+        add(resumeButton);
 
-        final JButton menu_button = new JButton();
+        final JButton menuButton = new JButton();
 
-        menu_button.setBounds((WIDTH - BUTTON_WIDTH) / 2, (HEIGHT - BUTTON_HEIGHT) / 2 + (BUTTON_HEIGHT + GAP_BETWEEN_BUTTONS) / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
-        menu_button.setBackground(BUTTON_COLOR);
-        menu_button.setModel(new FixedStateButtonModel());
-        menu_button.setText("Menu");
-        menu_button.setFont(new Font(BUTTON_FONT, BUTTON_STYLE, BUTTON_TEXT_SIZE));
-        menu_button.setForeground(BUTTON_TEXT_COLOR);
-        menu_button.setFocusPainted(false);
+        menuButton.setBounds((WIDTH - BUTTON_WIDTH) / 2, (HEIGHT - BUTTON_HEIGHT) / 2 + (BUTTON_HEIGHT + GAP_BETWEEN_BUTTONS) / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
+        menuButton.setBackground(BUTTON_COLOR);
+        menuButton.setModel(new FixedStateButtonModel());
+        menuButton.setText("Menu");
+        menuButton.setFont(new Font(BUTTON_FONT, BUTTON_STYLE, BUTTON_TEXT_SIZE));
+        menuButton.setForeground(BUTTON_TEXT_COLOR);
+        menuButton.setFocusPainted(false);
 
-        menu_button.addActionListener(event -> {
+        menuButton.addActionListener(event -> {
 
             getParent().add(new MainMenu());
 
@@ -120,7 +120,7 @@ public final class PauseMenu extends JPanel {
 
         });
 
-        add(menu_button);
+        add(menuButton);
 
     }
 
