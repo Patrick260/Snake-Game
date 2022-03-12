@@ -79,17 +79,17 @@ public final class MainMenu extends JPanel {
 
         add(title);
 
-        final JButton play_button = new JButton();
+        final JButton playButton = new JButton();
 
-        play_button.setBounds((WIDTH - BUTTON_WIDTH) / 2, (HEIGHT - BUTTON_HEIGHT) / 2 - (BUTTON_HEIGHT + GAP_BETWEEN_BUTTONS) / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
-        play_button.setBackground(BUTTON_COLOR);
-        play_button.setModel(new FixedStateButtonModel());
-        play_button.setText("Play");
-        play_button.setFont(new Font(BUTTON_FONT, BUTTON_STYLE, BUTTON_TEXT_SIZE));
-        play_button.setForeground(BUTTON_TEXT_COLOR);
-        play_button.setFocusPainted(false);
+        playButton.setBounds((WIDTH - BUTTON_WIDTH) / 2, (HEIGHT - BUTTON_HEIGHT) / 2 - (BUTTON_HEIGHT + GAP_BETWEEN_BUTTONS) / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
+        playButton.setBackground(BUTTON_COLOR);
+        playButton.setModel(new FixedStateButtonModel());
+        playButton.setText("Play");
+        playButton.setFont(new Font(BUTTON_FONT, BUTTON_STYLE, BUTTON_TEXT_SIZE));
+        playButton.setForeground(BUTTON_TEXT_COLOR);
+        playButton.setFocusPainted(false);
 
-        play_button.addActionListener(event -> {
+        playButton.addActionListener(event -> {
 
             getParent().add(new Game());
 
@@ -98,21 +98,21 @@ public final class MainMenu extends JPanel {
 
         });
 
-        add(play_button);
+        add(playButton);
 
-        final JButton exit_button = new JButton();
+        final JButton exitButton = new JButton();
 
-        exit_button.setBounds((WIDTH - BUTTON_WIDTH) / 2, (HEIGHT - BUTTON_HEIGHT) / 2 + (BUTTON_HEIGHT + GAP_BETWEEN_BUTTONS) / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
-        exit_button.setBackground(BUTTON_COLOR);
-        exit_button.setModel(new FixedStateButtonModel());
-        exit_button.setText("Exit");
-        exit_button.setFont(new Font(BUTTON_FONT, BUTTON_STYLE, BUTTON_TEXT_SIZE));
-        exit_button.setForeground(BUTTON_TEXT_COLOR);
-        exit_button.setFocusPainted(false);
+        exitButton.setBounds((WIDTH - BUTTON_WIDTH) / 2, (HEIGHT - BUTTON_HEIGHT) / 2 + (BUTTON_HEIGHT + GAP_BETWEEN_BUTTONS) / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
+        exitButton.setBackground(BUTTON_COLOR);
+        exitButton.setModel(new FixedStateButtonModel());
+        exitButton.setText("Exit");
+        exitButton.setFont(new Font(BUTTON_FONT, BUTTON_STYLE, BUTTON_TEXT_SIZE));
+        exitButton.setForeground(BUTTON_TEXT_COLOR);
+        exitButton.setFocusPainted(false);
 
-        exit_button.addActionListener(event -> System.exit(0));
+        exitButton.addActionListener(event -> System.exit(0));
 
-        add(exit_button);
+        add(exitButton);
 
     }
 
