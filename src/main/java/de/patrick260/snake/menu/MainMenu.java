@@ -66,6 +66,15 @@ public final class MainMenu extends JPanel {
 
         setBackground(BACKGROUND_COLOR);
 
+        add(buildTitle());
+        add(buildPlayButton());
+        add(buildExitButton());
+
+    }
+
+
+    private JTextField buildTitle() {
+
         final JTextField title = new JTextField(TITLE);
 
         title.setEditable(false);
@@ -77,7 +86,11 @@ public final class MainMenu extends JPanel {
         title.setHorizontalAlignment(JTextField.CENTER);
         title.setBounds((WIDTH - TITLE_WIDTH) / 2, TITLE_Y, TITLE_WIDTH, TITLE_HEIGHT);
 
-        add(title);
+        return title;
+
+    }
+
+    private JButton buildPlayButton() {
 
         final JButton playButton = new JButton();
 
@@ -98,7 +111,11 @@ public final class MainMenu extends JPanel {
 
         });
 
-        add(playButton);
+        return playButton;
+
+    }
+
+    private JButton buildExitButton() {
 
         final JButton exitButton = new JButton();
 
@@ -112,7 +129,7 @@ public final class MainMenu extends JPanel {
 
         exitButton.addActionListener(event -> System.exit(0));
 
-        add(exitButton);
+        return exitButton;
 
     }
 
