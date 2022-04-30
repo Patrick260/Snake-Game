@@ -66,6 +66,15 @@ public final class PauseMenu extends JPanel {
 
         setBackground(BACKGROUND_COLOR);
 
+        add(buildPauseText());
+        add(buildResumeButton());
+        add(buildMenuButton());
+
+    }
+
+
+    private JTextField buildPauseText() {
+
         final JTextField pauseText = new JTextField(PAUSE_TEXT);
 
         pauseText.setEditable(false);
@@ -77,7 +86,11 @@ public final class PauseMenu extends JPanel {
         pauseText.setHorizontalAlignment(JTextField.CENTER);
         pauseText.setBounds((WIDTH - PAUSE_TEXT_WIDTH) / 2, PAUSE_TEXT_Y, PAUSE_TEXT_WIDTH, PAUSE_TEXT_HEIGHT);
 
-        add(pauseText);
+        return pauseText;
+
+    }
+
+    private JButton buildResumeButton() {
 
         final JButton resumeButton = new JButton();
 
@@ -99,7 +112,11 @@ public final class PauseMenu extends JPanel {
 
         });
 
-        add(resumeButton);
+        return resumeButton;
+
+    }
+
+    private JButton buildMenuButton() {
 
         final JButton menuButton = new JButton();
 
@@ -120,7 +137,7 @@ public final class PauseMenu extends JPanel {
 
         });
 
-        add(menuButton);
+        return menuButton;
 
     }
 
