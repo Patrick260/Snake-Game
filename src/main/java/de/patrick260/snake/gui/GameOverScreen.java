@@ -65,6 +65,15 @@ public final class GameOverScreen extends JPanel {
 
         setBackground(BACKGROUND_COLOR);
 
+        add(buildGameOverText());
+        add(buildPlayAgainButton());
+        add(buildMenuButton());
+
+    }
+
+
+    private JTextField buildGameOverText() {
+
         final JTextField gameOverText = new JTextField(GAME_OVER_TEXT);
 
         gameOverText.setEditable(false);
@@ -76,7 +85,11 @@ public final class GameOverScreen extends JPanel {
         gameOverText.setHorizontalAlignment(JTextField.CENTER);
         gameOverText.setBounds((WIDTH - GAME_OVER_TEXT_WIDTH) / 2, GAME_OVER_TEXT_Y, GAME_OVER_TEXT_WIDTH, GAME_OVER_TEXT_HEIGHT);
 
-        add(gameOverText);
+        return gameOverText;
+
+    }
+
+    private JButton buildPlayAgainButton() {
 
         final JButton playAgainButton = new JButton();
 
@@ -97,7 +110,11 @@ public final class GameOverScreen extends JPanel {
 
         });
 
-        add(playAgainButton);
+        return playAgainButton;
+
+    }
+
+    private JButton buildMenuButton() {
 
         final JButton menuButton = new JButton();
 
@@ -118,7 +135,7 @@ public final class GameOverScreen extends JPanel {
 
         });
 
-        add(menuButton);
+        return menuButton;
 
     }
 
