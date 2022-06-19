@@ -195,9 +195,9 @@ public final class Game extends JPanel implements ActionListener {
 
         final ArrayList<String> possibleApplePositions = new ArrayList<>();
 
-        for (int i = 0; i < WIDTH; i+= PART_SIZE) {
+        for (int i = 0; i < WIDTH; i += PART_SIZE) {
 
-            for (int j = 0; j < HEIGHT; j+= PART_SIZE) {
+            for (int j = 0; j < HEIGHT; j += PART_SIZE) {
 
                 possibleApplePositions.add(i + "-" + j);
 
