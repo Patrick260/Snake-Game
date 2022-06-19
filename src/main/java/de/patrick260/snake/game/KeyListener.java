@@ -31,37 +31,41 @@ public final class KeyListener extends KeyAdapter {
 
         final int keyId = event.getKeyCode();
 
-        if (keyId == KeyEvent.VK_LEFT && game.direction != Direction.LEFT && game.direction != Direction.RIGHT && !game.alreadyMovedInTick) {
+        if (!game.alreadyMovedInTick) {
 
-            game.direction = Direction.LEFT;
+            if (keyId == KeyEvent.VK_LEFT && game.direction != Direction.LEFT && game.direction != Direction.RIGHT) {
 
-            game.alreadyMovedInTick = true;
+                game.direction = Direction.LEFT;
 
-        } else if (keyId == KeyEvent.VK_RIGHT && game.direction != Direction.RIGHT && game.direction != Direction.LEFT && !game.alreadyMovedInTick) {
+                game.alreadyMovedInTick = true;
 
-            game.direction = Direction.RIGHT;
+            } else if (keyId == KeyEvent.VK_RIGHT && game.direction != Direction.RIGHT && game.direction != Direction.LEFT) {
 
-            game.alreadyMovedInTick = true;
+                game.direction = Direction.RIGHT;
 
-        } else if (keyId == KeyEvent.VK_UP && game.direction != Direction.UP && game.direction != Direction.DOWN && !game.alreadyMovedInTick) {
+                game.alreadyMovedInTick = true;
 
-            game.direction = Direction.UP;
+            } else if (keyId == KeyEvent.VK_UP && game.direction != Direction.UP && game.direction != Direction.DOWN) {
 
-            game.alreadyMovedInTick = true;
+                game.direction = Direction.UP;
 
-        } else if (keyId == KeyEvent.VK_DOWN && game.direction != Direction.DOWN && game.direction != Direction.UP && !game.alreadyMovedInTick) {
+                game.alreadyMovedInTick = true;
 
-            game.direction = Direction.DOWN;
+            } else if (keyId == KeyEvent.VK_DOWN && game.direction != Direction.DOWN && game.direction != Direction.UP) {
 
-            game.alreadyMovedInTick = true;
+                game.direction = Direction.DOWN;
 
-        } else if (keyId == KeyEvent.VK_ESCAPE) {
+                game.alreadyMovedInTick = true;
 
-            game.running = false;
+            } else if (keyId == KeyEvent.VK_ESCAPE) {
 
-            game.setVisible(false);
+                game.running = false;
 
-            game.getParent().add(new PauseMenu());
+                game.setVisible(false);
+
+                game.getParent().add(new PauseMenu());
+
+            }
 
         }
 
