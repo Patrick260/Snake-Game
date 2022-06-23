@@ -1,6 +1,6 @@
 ## What's this?
 
-A simple snake game written in Java.
+A simple Snake-Game written in Java.
 
 ## How to play
 
