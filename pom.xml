@@ -28,7 +28,7 @@
     <packaging>jar</packaging>
 
     <name>Snake-Game</name>
-    <description>A simple Snake-Game written in Java.</description>
+    <description>A Snake-Game written in Java.</description>
     <url>patrick260.itch.io/snake-game</url>
     <inceptionYear>2022</inceptionYear>
 
